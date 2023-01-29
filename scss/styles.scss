@@ -1,0 +1,184 @@
+//VARIABLES: 
+$color-primary: rgb(92, 179, 238);
+$color-secondary: rgb(194, 248, 250);
+$color-tertiary: rgb(128, 255, 212);
+$height: 20rem;
+$width: 20rem;
+$font-text: 2rem;
+
+//FUNCIONES:
+@function lightness($color, $percentage) {
+  @return lighten($color, $percentage);
+}
+
+@function bigger($size) {
+  @return ($size * 2);
+}
+
+@function smaller($size) {
+  @return ($size / 2);
+}
+
+@function toRem($value){
+  @return ($value / 16) + rem; 
+}
+
+
+//MIXIN: 
+@mixin createGradient($color, $color2) {
+  background: radial-gradient(circle, $color, $color2);
+}
+
+@mixin createCircle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  margin-top: 5px;
+  padding: 20px;
+}
+
+@mixin boxshadow() {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@mixin marginDefault() {
+  margin: toRem(20);
+}
+
+@mixin createButton($color) {
+  background-color: darken($color, 50%);
+  border: 2px solid complement($color);
+  outline: none;
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+@mixin createStairs($height) {
+  $i: 1;
+  @while $i <= 5 {
+    .step:nth-child(#{$i}) {
+      background-color: black;
+      width: 1rem * $i;
+      height: $height;
+    }
+    $i: $i + 1;
+  }
+}
+
+//BUCLES: 
+
+@for $i from 1 to 6 {
+  .col-#{$i} {
+    width: 100% / 6 * $i;
+  }
+}
+
+$i: 1;
+@while $i <= 6 {
+  .col-#{$i} {
+    background-color: lighten(aquamarine, $i * 4);
+  }
+  $i: $i + 1;
+}
+
+$titles: (3rem, 5rem, 7rem);
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-size: nth($titles, $i);
+  }
+}
+
+@each $a-type in blue, purple{
+  a.#{$a-type}{
+    text-decoration: none;
+    color: $a-type; 
+  }
+}
+
+//USANDO SELECTORES, EXTENDS, INCLUDES Y LLAMANDO A LAS FUNCIONES ANTERIORES: 
+.container {
+  background-color: $color-primary;
+}
+
+.container2 {
+  background-color: $color-secondary;
+  &:hover {
+    background-color: black;
+  }
+}
+
+.text {
+  font-size: $font-text;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text2 {
+  @extend .text;
+  color: white;
+}
+
+.container3 {
+  background-color: $color-tertiary;
+  height: $height;
+  width: $width;
+  div {
+    height: smaller($height);
+    background-color: $color-primary;
+    &:hover {
+      background-color: black;
+    }
+    div {
+      height: 5rem;
+      background-color: $color-secondary;
+    }
+  }
+}
+
+.card {
+  @include marginDefault();
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+  background-color: black;
+  position: absolute;
+  display: flex;
+  div {
+    height: smaller($height);
+    width: smaller($width);
+    background-color: lightness($color-primary, 30%);
+    position: relative;
+  }
+}
+
+li:nth-child(even) {
+  font-size: bigger($font-text);
+}
+
+.circles {
+  display: flex;
+  align-items: center;
+}
+.circle1 {
+  @include createCircle(20px);
+  @include createGradient($color-secondary, $color-primary);
+}
+.circle2 {
+  @include createCircle(10px);
+  background-color: lightness($color-primary, 20%);
+}
+
+.btn {
+  @include createButton($color-secondary);
+  @include boxshadow();
+  @include marginDefault();
+}
+
+
+.stair{
+  @include createStairs(2rem); 
+}
+

@@ -1,0 +1,185 @@
+.col-1 {
+  width: 16.6666666667%;
+}
+
+.col-2 {
+  width: 33.3333333333%;
+}
+
+.col-3 {
+  width: 50%;
+}
+
+.col-4 {
+  width: 66.6666666667%;
+}
+
+.col-5 {
+  width: 83.3333333333%;
+}
+
+.col-1 {
+  background-color: #93ffdb;
+}
+
+.col-2 {
+  background-color: #a8ffe2;
+}
+
+.col-3 {
+  background-color: #bcffe9;
+}
+
+.col-4 {
+  background-color: #d1ffef;
+}
+
+.col-5 {
+  background-color: #e5fff6;
+}
+
+.col-6 {
+  background-color: #f9fffd;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 7rem;
+}
+
+a.blue {
+  text-decoration: none;
+  color: blue;
+}
+
+a.purple {
+  text-decoration: none;
+  color: purple;
+}
+
+.container {
+  background-color: rgb(92, 179, 238);
+}
+
+.container2 {
+  background-color: rgb(194, 248, 250);
+}
+.container2:hover {
+  background-color: black;
+}
+
+.text, .text2 {
+  font-size: 2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.text2 {
+  color: white;
+}
+
+.container3 {
+  background-color: rgb(128, 255, 212);
+  height: 20rem;
+  width: 20rem;
+}
+.container3 div {
+  height: 10rem;
+  background-color: rgb(92, 179, 238);
+}
+.container3 div:hover {
+  background-color: black;
+}
+.container3 div div {
+  height: 5rem;
+  background-color: rgb(194, 248, 250);
+}
+
+.card {
+  margin: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+  background-color: black;
+  position: absolute;
+  display: flex;
+}
+.card div {
+  height: 10rem;
+  width: 10rem;
+  background-color: #e7f4fc;
+  position: relative;
+}
+
+li:nth-child(even) {
+  font-size: 4rem;
+}
+
+.circles {
+  display: flex;
+  align-items: center;
+}
+
+.circle1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: 5px;
+  padding: 20px;
+  background: radial-gradient(circle, rgb(194, 248, 250), rgb(92, 179, 238));
+}
+
+.circle2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  padding: 20px;
+  background-color: #b8def8;
+}
+
+.btn {
+  background-color: #0ea9af;
+  border: 2px solid #fac4c2;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin: 1.25rem;
+}
+.btn:hover {
+  background-color: #93f3f6;
+}
+
+.stair .step:nth-child(1) {
+  background-color: black;
+  width: 1rem;
+  height: 2rem;
+}
+.stair .step:nth-child(2) {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+}
+.stair .step:nth-child(3) {
+  background-color: black;
+  width: 3rem;
+  height: 2rem;
+}
+.stair .step:nth-child(4) {
+  background-color: black;
+  width: 4rem;
+  height: 2rem;
+}
+.stair .step:nth-child(5) {
+  background-color: black;
+  width: 5rem;
+  height: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
